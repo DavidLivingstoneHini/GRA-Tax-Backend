@@ -17,7 +17,7 @@
 # Testing api in postman
 
 ```sh
-   api url: http://localhost:{PORT}/api/salary-calculator
+Api url: http://localhost:{PORT}/api/salary-calculator
 
 1. Open Postman and create a new request.
 
