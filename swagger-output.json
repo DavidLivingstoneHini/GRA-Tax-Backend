@@ -1,0 +1,87 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "BI Services",
+      "description": "Description",
+      "version": "1.0.0"
+    },
+    "host": "localhost:8800",
+    "basePath": "/",
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/api/salary-calculator": {
+        "post": {
+          "description": "",
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/SalaryCalculatorInput"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "schema": {
+                "$ref": "#/definitions/SalaryCalculatorOutput"
+              },
+              "examples": {
+                "application/json": {
+                  "grossSalary": 5000.00,
+                  "basicSalary": 4500.00,
+                  "payeTax": 375.00,
+                  "employeePensionContribution": 247.50,
+                  "employerPensionContribution": 585.00
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "SalaryCalculatorInput": {
+        "type": "object",
+        "properties": {
+          "netSalary": {
+            "type": "number",
+            "example": 4000
+          },
+          "allowances": {
+            "type": "number",
+            "example": 500
+          },
+          "employeePensionContribution": {
+            "type": "number",
+            "example": 200
+          }
+        }
+      },
+      "SalaryCalculatorOutput": {
+        "type": "object",
+        "properties": {
+          "grossSalary": {
+            "type": "number"
+          },
+          "basicSalary": {
+            "type": "number"
+          },
+          "payeTax": {
+            "type": "number"
+          },
+          "employeePensionContribution": {
+            "type": "number"
+          },
+          "employerPensionContribution": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+  
